@@ -94,6 +94,8 @@ function equipWeapon(){
   displaystats(hero)
 }
 
+
+
 function getRandomMonster(monsters){
   // let mon = ['Bones', 'Psych', 'Big Bang Theory', 'Mad Men', 
   // 'Breaking Bad', 'Modern Family', 'Game of Thrones', 'Dexter'];
