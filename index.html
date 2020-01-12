@@ -3,6 +3,16 @@
     <meta charset="utf-8">
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    #battleArea {
+      width: 100%;
+      padding: 50px 0;
+      text-align: center;
+      background-color: lightblue;
+      margin-top: 20px;
+    }
+    </style>
 </head>
 <body>
   <section id="charProfile">
@@ -22,18 +32,41 @@
       <!--display hero stats here using displaystats(person) function-->
     </section>
   </section>
-  <button id="changeName" onclick="changeHeroName()">Change Hero Name</button>
-  <section id="gameFunctions">
-    <section id= "worldMap">
-      <h3>World Map</h3>
-      <img id="inn" src="images/inn.jpeg" width="145" height="126" alt="inn">
-      <img id="dagger" src="images/dagger.jpeg" width="145" height="126" alt="dagger">
-      <img id="bag" src="images/bag.jpeg" width="145" height="126" alt="bag">
-      <img id="hunt" src="images/hunt.jpeg" width="145" height="126" alt="hunt">
-    </section>
-  </section>
+    <button id="changeName" onclick="changeHeroName()">Change Hero Name</button>
+      <section id="gameFunctions">
+        <section id= "worldMap">
+          <h3>World Map</h3>
+          <img id="inn" src="images/inn.jpeg" width="145" height="126" alt="inn">
+          <img id="dagger" src="images/dagger.jpeg" width="145" height="126" alt="dagger">
+          <img id="bag" src="images/bag.jpeg" width="145" height="126" alt="bag">
+          <img id="hunt" src="images/hunt.jpeg" width="145" height="126" alt="hunt">
+        </section>
+      </section>
 
+  <div id="battleArea">
+      <section id="monsterStat">
+        <section id="monsterImg">
+          <div data-height="40" data-width="40">
+            <img id="monsterImage" src="" width="145" height="126" alt="monsterImage">
+          </div>
+          
+          <div for="monsterName" id="monsterName">Name    : [Hero Name]</div>
+          <div for="monsterHealth" id="monsterHealth">Health  : 0</div>
+          <div for="monsterWeapon" id="monsterWeapon">Weapon  : nothing</div>
+        </section>
 
+        <div class="attack" id="attack">
+          <button type="default">Attack</button>
+        </div>
+        <div class="escape" id="escape">
+          <button type="default">Escape</button>
+        </div>
+      </section>
+
+      
+  </div>
+
+  <p><b></b></p>
   <!-- 👍 YOUR HTML HERE 👍 -->
 
 
