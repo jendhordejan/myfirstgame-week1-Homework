@@ -9,7 +9,10 @@ const hero = {name: 'XStriKeR',
 
 // game logic functions
 function rest(person){
-
+  person.health = 10;
+  //alert popup if health property =10
+  window.alert('Health has been replenished')
+  return person
 }
 
 function pickUpItem(){
