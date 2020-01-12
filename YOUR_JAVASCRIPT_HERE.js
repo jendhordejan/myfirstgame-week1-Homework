@@ -2,7 +2,7 @@
 // create an object hero{}
 const hero = {name: 'XStriKeR',
               heroic: true,
-              inventory: [{type: 'wooden sword', damage: 2},{type: 'Sword', damage: 5}],
+              inventory: [],
               health: 10,
               weapon: {type: 'wooden sword', damage: 2}}
               ;
@@ -35,20 +35,6 @@ function displaystats(person){
 
 displaystats(hero);
 
-
-
-// function addElement () { 
-//   // create a new div element 
-//   var newDiv = document.createElement("div"); 
-//   // and give it some content 
-//   var newContent = document.createTextNode("Hi there and greetings!"); 
-//   // add the text node to the newly created div
-//   newDiv.appendChild(newContent);  
-
-//   // add the newly created element and its content into the DOM 
-//   var currentDiv = document.getElementById("div1"); 
-//   document.body.insertBefore(newDiv, currentDiv); 
-// }
               
 console.log(Object.keys(hero).length)
 // game logic functions
