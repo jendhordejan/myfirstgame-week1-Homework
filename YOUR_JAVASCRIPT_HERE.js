@@ -10,10 +10,10 @@ const hero = {name: 'XStriKeR',
 const monst1 = {name: 'goblin',
                 heroic: false,
                 health: 5,
-                weapon: {type: 'club', damage: 1},
-                itemDrop: {type: 'club', damage: 1},
+                weapon: {type: 'spear', damage: 1},
+                itemDrop: {type: 'spear', damage: 1},
                 winChant: 'Gobel! Gobel!',
-                imgSrc: 'images/imp.jpeg'
+                imgSrc: 'images/goblin.jpeg'
 };
 
 const monst2 = {name: 'imp',
@@ -191,6 +191,12 @@ isAtkBtnClicked.addEventListener('click', event => {
   attack();
 })
 
+const isEscBtnClicked = document.getElementById("escape");
+isEscBtnClicked.addEventListener('click', event => {
+  //initiate attack sequence...
+  divBattle.style.display = "none"
+})
+
 //triggers when inn image is clicked
 const isInnClicked = document.getElementById("inn");
 
@@ -224,7 +230,6 @@ isHuntClicked.addEventListener('click', event => {
   displayMonsterStats(selectedMonster);
   initBattle();
 })
-
 
 //change Hero Name function
 function changeHeroName() {
