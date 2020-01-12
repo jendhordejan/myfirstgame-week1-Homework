@@ -47,17 +47,33 @@ function rest(person){
   return person
 }
 
-function pickUpItem(){
+function pickUpItem(item){
 //used when clicking the 'dagger' image
+//Adds the weapon object as the last element of the inventory array of person
+  hero.inventory[hero.inventory.length] = item;
+  
+  displaystats(hero);
 }
 
 function equipWeapon(){
 
 }
 
-const isInnClicked = document.getElementById("inn")
 //triggers when inn image is clicked
+const isInnClicked = document.getElementById("inn");
+
 isInnClicked.addEventListener('click', event => {
   //call rest function
   rest(hero);
+})
+
+//triggers when dagger image is clicked
+const isDaggerClicked = document.getElementById("dagger");
+
+isDaggerClicked.addEventListener('click', event => {
+  //call pickUpItem function
+  const pickDagger = {type: 'dagger', damage: 2}
+  console.log('dagger is clicked');
+  pickUpItem(pickDagger);
+
 })
