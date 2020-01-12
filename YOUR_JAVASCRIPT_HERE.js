@@ -8,7 +8,7 @@ const hero = {name: 'XStriKeR',
               ;
 
 // game logic functions
-function rest(){
+function rest(person){
 
 }
 
@@ -17,5 +17,5 @@ function pickUpItem(){
 }
 
 function equipWeapon(){
-  
+
 }
