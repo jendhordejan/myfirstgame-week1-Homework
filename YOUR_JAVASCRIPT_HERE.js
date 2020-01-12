@@ -4,9 +4,35 @@ const hero = {name: 'XStriKeR',
               heroic: true,
               inventory: [],
               health: 10,
-              weapon: {type: 'wooden sword', damage: 2}}
-              ;
-// document.body.onload = addElement;
+              weapon: {type: 'wooden sword', damage: 2}};
+
+
+const monst1 = {name: 'goblin',
+                heroic: false,
+                health: 5,
+                weapon: {type: 'club', damage: 1},
+                itemDrop: {type: 'club', damage: 1},
+                winChant: 'Gobel! Gobel!'
+};
+
+const monst2 = {name: 'imp',
+                heroic: false,
+                health: 5,
+                weapon: {type: 'claw', damage: 2},
+                itemDrop: {type: 'claw', damage: 2},
+                winChant: 'EEEEEEK! EEEK!'
+};
+
+const monst3 = {name: 'Reijn',
+                heroic: false,
+                health: 500,
+                weapon: {type: 'claw', damage: 2},
+                itemDrop: {type: 'claw', damage: 2},
+                winChant: 'You are not Strong and Independent and skillful enough to beat me! bwahaha'
+};
+
+const monsterList = [monst1, monst2, monst3];
+let selectedMonster ={};
 
 let skipInventoryLoad = false;
 let allowChangeHeroName = true;
@@ -68,6 +94,13 @@ function equipWeapon(){
   displaystats(hero)
 }
 
+function getRandomMonster(monsters){
+  // let mon = ['Bones', 'Psych', 'Big Bang Theory', 'Mad Men', 
+  // 'Breaking Bad', 'Modern Family', 'Game of Thrones', 'Dexter'];
+  selectedMonster = monsters[Math.floor(Math.random() * monsters.length)];
+  return selectedMonster;
+}
+
 //triggers when inn image is clicked
 const isInnClicked = document.getElementById("inn");
 
@@ -92,6 +125,15 @@ isBagClicked.addEventListener('click', event => {
   //call equipWeapon function
   equipWeapon();
 })
+
+//triggers when hunt image is clicked
+const isHuntClicked = document.getElementById("hunt");
+isHuntClicked.addEventListener('click', event => {
+  //call random monsters
+  getRandomMonster(monsterList);
+  console.log(getRandomMonster);
+})
+
 
 //change Hero Name function
 function changeHeroName() {
