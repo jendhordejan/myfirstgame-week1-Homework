@@ -8,6 +8,8 @@ const hero = {name: 'XStriKeR',
               ;
 // document.body.onload = addElement;
 
+let skipInventoryLoad = false;
+
 function displaystats(person){
   //display name : hero.name
   const nameEle = document.getElementById("heroName");
@@ -25,12 +27,15 @@ function displaystats(person){
   const invtSection = document.getElementById("inventory");
   
   //loop inside inventory then display
-  for (index = 0; index < person.inventory.length; index++){
-    const divWeap = document.createElement("div")
-    divWeap.setAttribute("id", index)
-    divWeap.innerHTML = `* ${person.inventory[index].type} - ${person.inventory[index].damage}`;
-    invtSection.appendChild(divWeap);
-  }
+  if (!skipInventoryLoad){
+      for (index = 0; index < person.inventory.length; index++){
+        const divWeap = document.createElement("div")
+        divWeap.setAttribute("id", index)
+        divWeap.innerHTML = `* ${person.inventory[index].type} - ${person.inventory[index].damage}`;
+        invtSection.appendChild(divWeap);
+        skipInventoryLoad=false;
+      }
+    }
 }
 
 displaystats(hero);
@@ -51,12 +56,16 @@ function pickUpItem(item){
 //used when clicking the 'dagger' image
 //Adds the weapon object as the last element of the inventory array of person
   hero.inventory[hero.inventory.length] = item;
-  
   displaystats(hero);
 }
 
 function equipWeapon(){
-
+//When the bag is clicked it will equip the hero with the first item in ..
+//the inventory array
+  const firstInvWeapon = hero.inventory[0];
+  hero.weapon = firstInvWeapon;
+  skipInventoryLoad=true;
+  displaystats(hero)
 }
 
 //triggers when inn image is clicked
@@ -76,4 +85,12 @@ isDaggerClicked.addEventListener('click', event => {
   console.log('dagger is clicked');
   pickUpItem(pickDagger);
 
+})
+
+//triggers when bag image is clicked
+const isBagClicked = document.getElementById("bag");
+
+isBagClicked.addEventListener('click', event => {
+  //call equipWeapon function
+  equipWeapon();
 })
