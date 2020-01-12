@@ -9,6 +9,7 @@ const hero = {name: 'XStriKeR',
 // document.body.onload = addElement;
 
 let skipInventoryLoad = false;
+let allowChangeHeroName = true;
 
 function displaystats(person){
   //display name : hero.name
@@ -40,8 +41,7 @@ function displaystats(person){
 
 displaystats(hero);
 
-              
-console.log(Object.keys(hero).length)
+
 // game logic functions
 function rest(person){
   person.health = 10;
@@ -82,9 +82,7 @@ const isDaggerClicked = document.getElementById("dagger");
 isDaggerClicked.addEventListener('click', event => {
   //call pickUpItem function
   const pickDagger = {type: 'dagger', damage: 2}
-  console.log('dagger is clicked');
   pickUpItem(pickDagger);
-
 })
 
 //triggers when bag image is clicked
@@ -94,3 +92,17 @@ isBagClicked.addEventListener('click', event => {
   //call equipWeapon function
   equipWeapon();
 })
+
+//change Hero Name function
+function changeHeroName() {
+  var heroName = prompt("Please enter your new hero name. This feature is only available once.", hero.name);
+  if (heroName != null) {
+    hero.name = heroName;
+    displaystats(hero);
+
+    allowChangeHeroName=false;
+    
+    const btnChangeName = document.getElementById("changeName");
+    btnChangeName.setAttribute("disabled", false);
+  }
+}
