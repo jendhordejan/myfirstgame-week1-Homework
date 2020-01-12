@@ -6,3 +6,16 @@ const hero = {name: 'XStriKeR',
               health: 10,
               weapon: {type: 'wooden sword', damage: 2}}
               ;
+
+// game logic functions
+function rest(){
+
+}
+
+function pickUpItem(){
+
+}
+
+function equipWeapon(){
+  
+}
