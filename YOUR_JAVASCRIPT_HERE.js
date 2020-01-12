@@ -43,15 +43,21 @@ function rest(person){
   
   //alert popup if health property =10
   window.alert('Health has been replenished');
+  displaystats(hero)
   return person
 }
 
 function pickUpItem(){
-
+//used when clicking the 'dagger' image
 }
 
 function equipWeapon(){
 
 }
 
-
+const isInnClicked = document.getElementById("inn")
+//triggers when inn image is clicked
+isInnClicked.addEventListener('click', event => {
+  //call rest function
+  rest(hero);
+})
